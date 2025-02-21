@@ -3,52 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Military Data Entry</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Army Personnel Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>Military Data Entry</h2>
-    <form action="YOUR_GOOGLE_SCRIPT_URL" method="post">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="text" name="rank" placeholder="Rank" required>
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="number" name="totalManpower" placeholder="Total Manpower" required>
-        <input type="number" name="presentManpower" placeholder="Present Manpower" required>
-        <textarea name="comments" placeholder="Comments"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="unitName">Brigade/Unit Name</label>
+            <input type="text" id="unitName" name="unitName" required>
 
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="errorMsg"></p>
+    </div>
+
+    <!-- Form Page -->
+    <div class="form-container" id="formPage" style="display:none;">
+        <h2>Personnel Data</h2>
+        <form id="personnelForm">
+            <label for="rank">Rank</label>
+            <input type="text" id="rank" name="rank" required>
+
+            <label for="totalManpower">Total Manpower</label>
+            <input type="number" id="totalManpower" name="totalManpower" required>
+
+            <label for="entitledManpower">Entitled Manpower</label>
+            <input type="number" id="entitledManpower" name="entitledManpower" required>
+
+            <label for="receivedManpower">Received Manpower</label>
+            <input type="number" id="receivedManpower" name="receivedManpower" required>
+
+            <label for="presentManpower">Present Manpower</label>
+            <input type="number" id="presentManpower" name="presentManpower" required>
+
+            <label for="absentManpower">Absent Manpower</label>
+            <input type="number" id="absentManpower" name="absentManpower" readonly>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="button" id="resetBtn">Clear</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
